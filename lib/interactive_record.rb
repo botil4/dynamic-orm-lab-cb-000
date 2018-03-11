@@ -53,8 +53,8 @@ class InteractiveRecord
   end
 
   def self.find_by(prop = {})
-    sql = "SELECT * FROM #{self.table_name} WHERE #{send(prop)} = ?"
-    DB[:conn].execute(sql, prop.value)
+    sql = "SELECT * FROM #{self.table_name} WHERE #{prop.keys[0]} = ?"
+    DB[:conn].execute(sql, prop.values[0])
   end
 
 end
