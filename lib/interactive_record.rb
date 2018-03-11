@@ -52,9 +52,9 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
 
-  def find_by(attr:)
-    sql = "SELECT * FROM #{self.table_name} WHERE #{send(attr)} = ?"
-    DB[:conn].execute(sql, attr)
+  def find_by(attribute:)
+    sql = "SELECT * FROM #{self.table_name} WHERE #{send(attrtibute)} = ?"
+    DB[:conn].execute(sql, attribute)
   end
 
 end
